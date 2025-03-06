@@ -24,7 +24,6 @@ library(pwr)
 island_caffeine <- read_csv("island_caffeine.csv")
 ```
 
-
 ## 2. Design of the Experiment
 
 ### a) Design
@@ -47,7 +46,6 @@ latin(3)
 set.seed(4)
 latin(3, random = TRUE)
 ```
-
 
 ### b) Sampling
 
@@ -145,9 +143,6 @@ plot(timed ~ factor(user))
 ```
 
 ### d) Sample Size and Power
-
-
-
 
 ```{r power of test}
 mean0 <- mean(timed[caffeine == 0])
