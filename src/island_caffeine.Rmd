@@ -1,0 +1,210 @@
+---
+title: "Statistics 101B Project -- Caffeine & Attention"
+author: "Group 4: Nicholas Cassol-Pawson, Max Chalekson, Romy Gou, Kanzah Jamil, Oliver Siu, Emma Vidal, Jesper White"
+date: "June 9, 2024"
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float: true
+    code_folding: show
+  pdf_document:
+    toc: false
+    toc_depth: 4
+    keep_tex: yes
+---
+
+## 1. Sourcing
+
+```{r source, message = FALSE}
+library(tidyverse)
+library(DescTools)
+library(car)
+library(pwr)
+island_caffeine <- read_csv("island_caffeine.csv")
+```
+
+
+## 2. Design of the Experiment
+
+### a) Design
+
+```{r latin square}
+latin <- function(n, random = FALSE){
+  # generates a Latin Square of order n
+  x <- matrix(LETTERS[1:n], n, n)
+  for (j in 2:n) {
+    x[, j] <- x[c(j:n, 1:(j - 1)), j]
+  }
+  if (random) {
+    x <- x[sample(n), ]
+    x <- x[, sample(n)]
+  }
+  x
+}
+
+latin(3)
+set.seed(4)
+latin(3, random = TRUE)
+```
+
+
+### b) Sampling
+
+```{r sampling}
+# island names
+ironbark_names <- c("Hofn", "Vardo", "Helvig",
+                    "Bjurholm", "Blonduos", "Helluland")
+providence_names <- c("Hayarano", "Akkeshi", "Reading",
+                      "Nelson", "Arcadia", "Kiyobico",
+                      "Takazaki", "Shinobi", "Biruwa")
+bonne_names <- c("Nidoma", "Colmar", "Riroua",
+                 "Pauma", "Talu", "Valais",
+                 "Kinsale", "Mahuti", "Vaiku",
+                 "Eden", "Maeva", "Gordes")
+
+# town house counts
+ironbark_house <- c(937, 596, 483,
+                    434, 431, 387)
+providence_house <- c(521, 461, 714,
+                      318, 1557, 520,
+                      416, 358, 451)
+bonne_house <- c(640, 2037, 462,
+                 399, 483, 361,
+                 429, 1017, 400,
+                 523, 457, 403)
+
+island_rng <- function(counts, town_names) {
+  # generates and randomizes town and house number combinations
+  town <- rep(town_names, counts)
+  house <- numeric(0)
+  for (i in counts) {
+    house <- c(house, seq_len(i))
+  }
+  combo <- tibble(town, house)
+  combo[sample(nrow(combo), nrow(combo)), ]
+}
+
+# generate rng objects
+set.seed(4)
+ironbark_rng <- island_rng(ironbark_house, ironbark_names)
+providence_rng <- island_rng(providence_house, providence_names)
+bonne_rng <- island_rng(bonne_house, bonne_names)
+
+# index rng objects as necessary for viewing
+ironbark_rng
+providence_rng
+bonne_rng
+```
+
+### c) Experiment Data
+
+#### i) Loading Data Into Workspace
+
+```{r load data}
+# treatment, blocks, replicates
+caffeine <- island_caffeine$caffeine
+age <- island_caffeine$age_range
+island <- island_caffeine$island
+user <- island_caffeine$replicate
+
+# response
+timed <- island_caffeine$timed_diff
+
+# ANOVA
+timed_aov <- aov(timed ~
+                   factor(caffeine) +
+                   factor(age) +
+                   factor(island) +
+                   factor(user))
+```
+
+#### ii) Initial Plots
+
+```{r basic plots, cache = TRUE}
+age_index <- as.integer(factor(age))
+island_index <- as.integer(factor(island))
+user_index <- as.integer(factor(user))
+caf_col <- c("blue", "orange", "red")
+
+par(mfrow = c(2, 2))
+plot(timed ~ factor(caffeine))
+plot(timed ~ caffeine, main = "age",
+     col = caf_col[age_index], pch = age_index)
+plot(timed ~ caffeine, main = "island",
+     col = caf_col[island_index], pch = island_index)
+plot(timed ~ caffeine, main = "user",
+     col = rainbow(7)[user_index], pch = user_index)
+
+par(mfrow = c(1, 2))
+plot(timed ~ factor(age))
+plot(timed ~ factor(island))
+
+par(mfrow = c(1, 1))
+plot(timed ~ factor(user))
+```
+
+### d) Sample Size and Power
+
+
+
+
+```{r power of test}
+mean0 <- mean(timed[caffeine == 0])
+mean1 <- mean(timed[caffeine == 100])
+mean2 <- mean(timed[caffeine == 200])
+
+caffeine_range <- range(c(mean0, mean1, mean2))
+caffeine_range
+
+d <- abs(diff(caffeine_range))
+mse <- summary(timed_aov)[[1]][["Mean Sq"]][5]
+caf_sd <- sqrt(mse)
+f <- d / caf_sd
+
+caffeine_min <- pwr.anova.test(k = 3, f = f, sig.level = 0.05, power = 0.8)
+caffeine_min
+caffeine_pwr <- pwr.anova.test(k = 3, n = 21, f = f, sig.level = 0.05)
+caffeine_pwr
+
+caf_n <- caffeine_min$n
+caf_pwr <- caffeine_pwr$power
+```
+
+#### i) Minimum and Maximum means
+
+The minimum and maximum means of the treatment group are $`r caffeine_range`$.
+
+#### ii) Standard Deviation
+
+A preliminary estimate of $\sigma^2$ is obtained from $MS_E$ which is $\hat\sigma^2 = `r mse`$. Therefore, we have that $\sigma = `r caf_sd`$.
+
+#### iii) Justifying Sample Size
+
+From `pwr.anova.test()`, $n = `r caf_n`$, so for 0.8 test power, $n=34$ replicates are required which is a sample size of $N=102$.
+
+#### vi) Reporting Test Power
+
+Since there are $k=3$ treatment groups and $n=21$ observations per group,
+we have that the power of the test is $`r caf_pwr`$.
+
+## 3. Results and interpretation
+
+### a) Summary
+
+```{r summary}
+summary(timed_aov)
+```
+
+### b) Diagnostic Plots
+
+```{r diagnostic, cache=TRUE}
+par(mfrow = c(1, 2))
+plot(timed_aov, which = c(1, 2))
+```
+
+### c) Post-hoc Analysis
+
+```{r post-hoc}
+TukeyHSD(timed_aov)
+```

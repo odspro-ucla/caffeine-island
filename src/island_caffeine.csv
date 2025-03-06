@@ -1,0 +1,64 @@
+replicate,subject_name,age_range,island,town,caffeine,timed1,glucose1,first_test1,timed2,glucose2,timed_diff,glucose_diff,first_test2
+Emma,EMMA EKLUND,20-35,North,Hofn,0,7.6,90,Timed Up and Go,7.8,89,0.2,-1,Timed Up and Go
+Emma,MICHELLE WILSON,35-50,North,Blonduos,100,8,91,Blood Glucose,8,91,0,0,Blood Glucose
+Emma,GALEN BAGER,50-65,North,Bjurholm,200,8.9,86,Blood Glucose,9.3,88,0.4,2,Timed Up and Go
+Emma,GUNNAR IBSEN,20-35,Middle,Kiyobico,100,7.3,88,Timed Up and Go,8.3,86,1,-2,Timed Up and Go
+Emma,MAUD GEORGES,35-50,Middle,Arcadia,200,8.3,85,Blood Glucose,7.8,85,-0.5,0,Blood Glucose
+Emma,NAINA JOSHI,50-65,Middle,Kiyobico,0,9.5,89,Timed Up and Go,9.4,90,-0.1,1,Blood Glucose
+Emma,LEON ABEL,20-35,South,Colmar,200,7.9,91,Blood Glucose,7.2,91,-0.7,0,Timed Up and Go
+Emma,OPHELIA SATO,35-50,South,Maeva,0,8.3,90,Timed Up and Go,9.7,92,1.4,2,Blood Glucose
+Emma,RADHAK CHAUDHURI,50-65,South,Vaiku,100,10.3,96,Timed Up and Go,9.9,99,-0.4,3,Timed Up and Go
+Jesper,NAOKI HALL,20-35,North,Blonduos,0,7.6,93,Blood Glucose,7.3,91,-0.3,-2,Timed Up and Go
+Jesper,PER PETERS,35-50,North,Helvig,100,9.3,89,Timed Up and Go,8,88,-1.3,-1,Blood Glucose
+Jesper,HOLGER DIETRICH,50-65,North,Vardo,200,8.5,91,Blood Glucose,9.1,86,0.6,-5,Timed Up and Go
+Jesper,LOUIS KIMURA,20-35,Middle,Takazaki,200,7.7,84,Timed Up and Go,8.1,88,0.4,4,Timed Up and Go
+Jesper,REMY LANGLOIS,35-50,Middle,Kiyobico,0,8,93,Timed Up and Go,7.3,96,-0.7,3,Blood Glucose
+Jesper,RUSHIL GADHAVI,50-65,Middle,Kiyobico,100,10.2,91,Blood Glucose,10.4,94,0.2,3,Timed Up and Go
+Jesper,MARSHALL SRINIVASAN,20-35,South,Vaiku,100,7.7,89,Blood Glucose,7.9,88,0.2,-1,Timed Up and Go
+Jesper,ROSALIE SORENSEN,35-50,South,Talu,200,7.2,90,Timed Up and Go,7.7,87,0.5,-3,Blood Glucose
+Jesper,NABHI KAUR,50-65,South,Gordes,0,9.7,92,Timed Up and Go,9.2,91,-0.5,-1,Blood Glucose
+Kanzah,OLE JENSEN,20-35,North,Blonduos,0,7.6,91,Timed Up and Go,7.2,93,-0.4,2,Timed Up and Go
+Kanzah,JACK KIMURA,35-50,North,Helluland,200,9.2,88,Blood Glucose,9.7,88,0.5,0,Blood Glucose
+Kanzah,MICHAEL SOLBERG ,50-65,North,Hofn,100,8.9,93,Blood Glucose,9,94,0.1,1,Timed Up and Go
+Kanzah,PHILIPP JENSEN,20-35,Middle,Biruwa,200,7.5,87,Blood Glucose,7.6,85,0.1,-2,Blood Glucose
+Kanzah,GUY BLACK,35-50,Middle,Kiyobico,100,8.1,94,Blood Glucose,8,93,-0.1,-1,Timed Up and Go
+Kanzah,LILJA EKLUND,50-65,Middle,Akkeshi,0,8.3,93,Timed Up and Go,7.9,98,-0.4,5,Blood Glucose
+Kanzah,HUGO BAGER,20-35,South,Eden,100,8.2,95,Timed Up and Go,8,97,-0.2,2,Timed Up and Go
+Kanzah,MAARAN GHOSH,35-50,South,Talu,0,9.3,93,Timed Up and Go,8.9,91,-0.4,-2,Timed Up and Go
+Kanzah,LEON CONNOLLY,50-65,South,Gordes,200,10.4,87,Blood Glucose,10.6,88,0.2,1,Blood Glucose
+Max,Mangala Dhar,20-35,North,Helluland [11],0,8.1,93,timed up and go,8.2,95,0.1,2,timed up and go
+Max,Harold Jensen,35-50,North,Bjurholm [384],200,8.2,95,blood glucose,7.9,92,-0.3,-3,blood glucose
+Max,Kahaan Ganaka,50-65,North,Helvig [321],100,9.3,89,timed up and go,9.8,90,0.5,1,timed up and go
+Max,Chloe Edwards,20-35,Middle,Shinobi [134],100,7.8,92,blood glucose,8.8,89,1,-3,blood glucose
+Max,Shannon Edwards,35-50,Middle,Arcadia [213],0,8.9,96,timed up and go,9.2,96,0.3,0,timed up and go
+Max,Bailey Morris,50-65,Middle,Shinobi [7],200,7.9,78,blood glucose,8.7,80,0.8,2,blood glucose
+Max,Eve Swift,20-35,South,Talu [423],200,9,94,timed up and go,8.6,92,-0.4,-2,timed up and go
+Max,Jana Varadhan,35-50,South,Talu [438],100,8.6,95,blood glucose,8.9,94,0.3,-1,blood glucose
+Max,Chahna Tamboli,50-65,South,Mahuti [557],0,10.2,91,timed up and go,10.5,93,0.3,2,timed up and go
+Nicholas,LUKAS SOLBERG,20-35,North,Helvig,200,7.3,98,Timed Up and Go,7.3,102,0,4,Timed Up and Go
+Nicholas,EMILY REGAN,35-50,North,Hofn,0,8.5,92,Blood Glucose,8.2,94,-0.6,2,Blood Glucose
+Nicholas,HALLE SOLBERG,50-65,North,Blonduos,100,8.5,88,Timed Up and Go,8.5,90,0,2,Blood Glucose
+Nicholas,BENJAMIN WILSON,20-35,Middle,Shinobi,100,7.7,89,Blood Glucose,6.9,88,-0.8,-1,Timed Up and Go
+Nicholas,RYOSUKE IWASAKI,35-50,Middle,Shinobi,200,8.4,90,Timed Up and Go,7.6,92,-0.8,2,Timed Up and Go
+Nicholas,REGIS PREVOST,50-65,Middle,Akkeshi,0,9.5,92,Timed Up and Go,9.3,93,-0.2,1,Blood Glucose
+Nicholas,PRISHA TAMBOLI,20-35,South,Riroua,0,8.4,87,Blood Glucose,8.6,90,0.2,3,Timed Up and Go
+Nicholas,BHAJAN CHAUDHURI,35-50,South,Kinsale,100,7.5,88,Blood Glucose,8.3,88,0.8,0,Blood Glucose
+Nicholas,LAYAK GUPTA,50-65,South,Vaiku,200,9.5,95,Blood Glucose,10.5,95,1,0,Timed Up and Go
+Oliver,NIKO KRUSE,20-35,North,Helvig,100,7.2,86,Blood Glucose,7.6,83,0.4,-3,Blood Glucose
+Oliver,NANAMI YAMADA,35-50,North,Hofn,200,8.8,84,Timed Up and Go,8.6,87,-0.2,3,Timed Up and Go
+Oliver,BRENDA CARLSEN,50-65,North,Hofn,0,9.5,96,Blood Glucose,10,95,0.5,-1,Timed Up and Go
+Oliver,KIRK SOLBERG,20-35,Middle,Akkeshi,0,7.9,91,Blood Glucose,7.8,94,-0.1,3,Timed Up and Go
+Oliver,CHARLENE STEVENSON,35-50,Middle,Kiyobico,100,7.9,91,Blood Glucose,8.4,90,0.5,-1,Timed Up and Go
+Oliver,CHRYSELLE SATO,50-65,Middle,Biruwa,200,9.3,91,Blood Glucose,9,92,-0.3,1,Timed Up and Go
+Oliver,ZOE BROWN,20-35,South,Kinsale,200,7.5,88,Timed Up and Go,7.7,91,0.2,3,Timed Up and Go
+Oliver,LEON SHARMA,35-50,South,Maeva,0,8.7,90,Timed Up and Go,7.8,88,-0.9,-2,Blood Glucose
+Oliver,AI PRICE,50-65,South,Vaiku,100,10,88,Timed Up and Go,10.3,91,0.3,3,Blood Glucose
+Romy,Emma Lund,20-35,North,Helvig,200,17,19,blood,6.8,88,0,-3,timed
+Romy,Oliver Favreau,35-50,North,Bjurholm,100,8.4,94,blood,7.6,97,-0.8,3,blood
+Romy,Lucia Solberg,50-65,North,Vardo,0,9,92,timed,9.1,93,0.1,1,blood
+Romy,Sogen Ono,20-35,Middle,Hayarano,100,7.6,95,timed,7.5,95,-0.1,0,timed
+Romy,Tove Pallesen,35-50,Middle,Nelson,0,9.2,91,blood,9.2,90,0,-1,blood
+Romy,Gerik Bager,50-65,Middle,Kiyobico,200,9.5,92,timed,9.4,90,-0.1,-2,timed
+Romy,Raine Sorenson,20-35,South,Vaiku,0,8,90,timed,7.9,90,-0.1,0,timed
+Romy,Dionne McCarthy,35-50,South,Gordes,200,8,93,timed,8,88,0,-5,blood
+Romy,Vasudha Varadhan,50-65,South,Talu,100,9.2,90,blood,9.5,90,0.3,0,blood
